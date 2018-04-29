@@ -2,33 +2,39 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
     crossorigin="anonymous">
-  <meta charset="UTF-8">
-  <title></title>
+    <link rel='shortcut icon' type='image/x-icon' href="steam.ico" />
+
+  <title>Mural Projeto de Software</title>
 </head>
 
-<body style="background-color: #C0C0C0">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-
-    <h1 style="color: #DCDCDC">Mural Projeto de Software
-      <h1>
+<body style="background: #151515;">
+  <nav style="background: #020202;" class="navbar navbar-expand-lg navbar-dark bg fixed-top" id="mainNav">
+    
+    <div style="margin: 0 auto;">
+    <h1 style="color: #FFFFFF; font: italic bold 55px Lucida Grande, sans-serif;">
+        <img width="75px; position: relative" alt="Ícone" src="steam.png"/>
+        Mural Projeto de Software <h1>
       </h1>
+    </div>
   </nav>
   <hr>
   </br>
   <style>
+
+
     .card-javan {
       /* Add shadows to create the "card" effect */
       box-shadow: 0 12px 8px 0 rgba(0, 0, 0, 0.2);
       transition: 0.3s;
-      border-radius: 15px;
-      background-color: #DCDCDC;
       display: inline-block;
       position: relative;
       top: 30px;
-      height: 100px;
-
+      border-radius: 10px;
+      
     }
 
     .width {
@@ -45,15 +51,17 @@
       top: 25px;
       bottom: 0px;
       padding: 10px 60px;
-      width: 400px;
-    }
+      width: 500px;
+      color: #FFFFFF;
+      font: italic 20px Lucida Grande, sans-serif;
+
   </style>
   <div>
 
-    <div class="card-javan" style="position: relative;">
+    <div style="position: relative; width: 75%; margin: 0 auto; top: 55px;">
 
-      <h1 style="text-align: center;">
-        <b>Cadastro de mensagens:</b>
+      <h1 style="text-align: center; color: #FFFFFF">
+        <b>Enviar mensagem :)</b>
       </h1>
       <ul>
         <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px; width: 85%;">
@@ -62,13 +70,32 @@
       <div id="myForm">
           
         <form>
-            <input style="width:500px; padding: 10px; "type="text" class="form-control" id="title" placeholder="Título">
-            <input style="width:500px; padding: 10px;" type="text" class="form-control" id="author" placeholder="Autor">  
-            <input style="width:300 px;padding: 10px;" type="text" class="form-control" id="mensagem" placeholder="Mensagem">
-            <button style="width:100%; position: relative;"type="button" class="btn btn-outline-success my-2 my-sm-0 pull-right button-position" onclick="cadastrar()"><b>-------- Enviar ---------</b></button>
+            <input style="width: 25%; padding: 10px; "type="text" class="form-control" id="title" placeholder="Título">
+        </br>
+            <input style="width: 50%; padding: 10px;" type="text" class="form-control" id="author" placeholder="Autor">  
+          </br>
+
+            <textarea style="width: 75%;;padding: 10px;" type="text" class="form-control" id="mensagem" placeholder="Mensagem" cols="30" rows="5"></textarea>
+          </br>
+
+            <button style="width: 100%; position: relative;"type="button" class="btn btn-outline-success my-2 my-sm-0 pull-right button-position" onclick="cadastrar()"><b>--------- Enviar ---------</b></button>
             
           </form>
       
+      </div>
+      <div>
+       <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 25px; margin-bottom: 25px; width: 85%;">
+        <? if($primeiro_ponto != NULL && $ultimo_ponto != NULL && $quantidade_de_trajetos>
+        <input style="width: 75%; padding: 10px;" type="text" class="form-control" id="filtro" placeholder="Filtro">
+        
+
+        <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 25px; margin-bottom: 25px; width: 85%;">
+        <? if($primeiro_ponto != NULL && $ultimo_ponto != NULL && $quantidade_de_trajetos>
+
+        <div>
+            <input style="width: 10%; padding: 10px; position: relative; border-radius: 6px;" type="text" id="deletar" placeholder="ID  ">
+            <button style="width: 5%; position: relative;"  type="button" class="btn btn-outline-success my-2 my-sm-0 pull-right button-position" onclick="deletar()"><b>Deletar</b></button>
+            </div>
       </div>
 
       </div> 
@@ -76,7 +103,7 @@
       </div>
     </br>    </br>
 
-  <div class="width" id="listagem">
+  <div class="width" style="background: linear-gradient(#151515,#FFFFFF);" id="listagem">
   </div>
 
 
