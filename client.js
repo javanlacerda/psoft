@@ -8,6 +8,9 @@ function cadastrar() {
     var titulo = document.getElementById("title");
     var mensagem = document.getElementById("mensagem");
     var autor = document.getElementById("author");
+    const login = document.getElementById("credential").value;
+    const senha = document.getElementById("passcode").value;
+    var credential = login + ":" + senha;
 
     fetch('http://150.165.85.16:9900/api/msgs', {
         method: 'POST',
@@ -15,10 +18,10 @@ function cadastrar() {
             title: titulo.value,
             msg: mensagem.value,
             author: autor.value,
-            credentials: "javan:j@van123"
+            credentials: credential
         })
     });
-    if (title.value.trim() || "" && msg.value.trim() || "" && author.value.trim() != "") {
+    if (title.value.trim() || "" && msg.value.trim() || "" && author.value.trim() != ""|| "" && login.trim() != ""|| "" && senha.trim() != "" ) {
 
         update({
             title: titulo.value,
@@ -45,7 +48,7 @@ function update(msg) {
 
 
     res.unshift
-    (msg);
+        (msg);
     listing(res);
 
 }
@@ -130,18 +133,30 @@ function watch() {
 function deletar() {
 
     const idd = document.getElementById("deletar");
+    const login = document.getElementById("credential").value;
+    const senha = document.getElementById("passcode").value;
+    var credential = login + ":" + senha;
+        
 
     fetch('http://150.165.85.16:9900/api/msgs/' + idd.value, {
         method: 'DELETE',
         body: JSON.stringify({
-            credentials: "javan:j@van123"
+            credentials: credential
         })
     });
+
+    if (login.trim() == "" || "" && senha.trim() == "" ) {
+
+    alert("Necessário preencher a credencial e senha para poder deletar uma mensagem!")
+    
+    } else {
+
     const index = res.map(msg => msg.id).indexOf(idd.value)
-    
-    res.splice(index, 1);   
-    
+
+    res.splice(index, 1);
+
     listing(res);
+    }
     resetForm();
 }
 
